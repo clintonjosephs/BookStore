@@ -162,8 +162,7 @@ button {
 
   .listItem {
     height: 16.625rem;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
     border-radius: 4px;
     border: solid 1px var(--border-color);
     width: 100%;

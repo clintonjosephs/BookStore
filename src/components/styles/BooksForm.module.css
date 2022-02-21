@@ -37,7 +37,6 @@ button {
   align-items: center;
 }
 
-
 @media (max-width: 768px) {
   .formstyle {
     display: flex;
