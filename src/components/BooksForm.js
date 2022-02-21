@@ -17,19 +17,25 @@ const BooksForm = () => {
           className={css.control}
           required
         />
-        <select name="category" className={css.control} defaultValue="" required>
+        <input
+          type="text"
+          name="author"
+          placeholder="Book Author"
+          className={css.control}
+          required
+        />
+        <select
+          name="category"
+          className={css.control}
+          defaultValue=""
+          required
+        >
           <option value="" hidden>
             Category
           </option>
-          <option value="sci-fi">
-            Sci-fi
-          </option>
-          <option value="drama">
-            Drama
-          </option>
-          <option value="poetry">
-            Category
-          </option>
+          <option value="sci-fi">Sci-fi</option>
+          <option value="drama">Drama</option>
+          <option value="poetry">Category</option>
         </select>
         <button type="submit" onClick={formSubmitHandler}>
           ADD BOOK
