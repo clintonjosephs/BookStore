@@ -1,0 +1,66 @@
+.bookNav {
+  height: 7rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-name {
+  font-family: var(--font-header);
+  font-size: 2.275rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.navLink {
+  opacity: 0.5;
+  font-family: var(--font-header);
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: var(--black-two);
+}
+
+.bookNav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 15px;
+}
+
+
+.bookNav ul li {
+  margin-right: 50px;
+}
+
+.avatar {
+  width: 2.813rem;
+  height: 2.813rem;
+  padding: 0.875rem;
+  border: solid 1px #e9e9e9 ;
+  border-radius: 50px;
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .bookNav {
+    padding: 5px;
+    height: 5rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-name {
+    font-family: var(--font-header);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+  }
+}
