@@ -14,6 +14,8 @@
   --font: 'RobotoSlab', sans-serif;
   --font-header: 'Montserrat', sans-serif;
   --border-color: #e9e9e9;
+  --form-header: #888;
+  --white: #fff;
 }
 
 body {
