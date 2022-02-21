@@ -1,14 +1,14 @@
 import React from 'react';
 import BooksList from './BooksList';
 import BooksForm from './BooksForm';
+import './styles/BooksContainer.css';
 
-const Books = () => (
+const BooksContainer = () => (
   <>
     <BooksList />
-    {' '}
-    {' '}
+    <div className="divider" />
     <BooksForm />
   </>
 );
 
-export default Books;
+export default BooksContainer;

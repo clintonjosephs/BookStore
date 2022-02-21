@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Books from './components/Books';
+import BooksContainer from './components/BooksContainer';
 import NavBar from './components/NavBar';
 import './index.css';
 import Categories from './pages/Categories';
@@ -13,7 +13,7 @@ ReactDOM.render(
     <Router basename={process.env.PUBLIC_URL}>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Books />} />
+        <Route path="/" element={<BooksContainer />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

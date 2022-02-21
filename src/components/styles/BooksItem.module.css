@@ -17,6 +17,14 @@
   width: 95%;
 }
 
+.innerList {
+  margin-top: 55px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
 .itemsList ul li {
   font-family: var(--font);
   font-size: 0.875rem;
@@ -82,6 +90,33 @@ button {
   cursor: pointer;
 }
 
+.percentComplete {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-family: var(--font-header);
+  font-size: 2rem;
+}
+
+.completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-family: var(--font-header);
+  font-size: 0.875rem;
+}
+
+.lastList {
+  margin-left: 50px;
+  border-left: solid 2px var(--border-color);
+}
+
+.barContainer {
+  width: 80px;
+  height: 80px;
+}
+
 @keyframes createBox {
   from {
     transform: scale(0);
@@ -89,5 +124,66 @@ button {
 
   to {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .barContainer {
+    width: 30px;
+    height: 30px;
+  }
+
+  .itemsList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+  }
+
+  .percentComplete {
+    font-family: var(--font-header);
+    font-size: 18px;
+  }
+
+  .completed {
+    opacity: 0.5;
+    font-family: var(--font-header);
+    font-size: 12px;
+  }
+
+  .innerList {
+    margin-top: 15px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+  }
+
+  .listItem {
+    height: 16.625rem;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 4px;
+    border: solid 1px var(--border-color);
+    width: 100%;
+    padding: 5px;
+    overflow-x: hidden;
+  }
+
+  button {
+    width: 7rem;
+    height: 3.063rem;
+    border: none;
+    background-color: var(--accent-color);
+    font-family: var(--font);
+    font-size: 0.813rem;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .lastList {
+    margin-left: 5px;
+    border-left: solid 2px var(--border-color);
   }
 }
