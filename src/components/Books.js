@@ -4,8 +4,9 @@ import BooksForm from './BooksForm';
 
 const Books = () => (
   <>
-    <h2>I am the books section</h2>
     <BooksList />
+    {' '}
+    {' '}
     <BooksForm />
   </>
 );

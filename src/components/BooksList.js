@@ -3,8 +3,13 @@ import BooksItem from './BooksItem';
 
 const BooksList = () => (
   <>
-    <h2>Here are the list of books</h2>
-    <ul>
+    <ul
+      style={{
+        marginLeft: '0px',
+        paddingLeft: '0px',
+        listStyle: 'none',
+      }}
+    >
       <BooksItem />
     </ul>
   </>

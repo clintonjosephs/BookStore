@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './styles/BooksItem.module.css';
 
 const BooksItem = () => (
   <>
-    <li>Harry Potter</li>
-    <li>Pirates of the carrebian</li>
+    <li className={styles.listItem}>Harry Potter</li>
+    <li className={styles.listItem}>Pirates of the carrebian</li>
   </>
 );
 
