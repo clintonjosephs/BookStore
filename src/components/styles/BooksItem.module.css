@@ -8,6 +8,80 @@
   animation: createBox 2s;
 }
 
+.itemsList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+
+.itemsList ul li {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--accent-color-actions);
+  border-right: solid 2px var(--border-color);
+  padding-right: 10px;
+  padding-left: 5px;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.itemsList ul li:last-child {
+  border-right: none;
+}
+
+.bookTopic {
+  opacity: 0.5;
+  font-family: var(--font-header);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.author {
+  font-family: var(--font);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: var(--accent-color);
+}
+
+.chapter {
+  width: 7.875rem;
+  height: 1.125rem;
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+  font-family: var(--font);
+  font-size: 0.813rem;
+  font-weight: 300;
+}
+
+.lesson {
+  width: 13.25rem;
+  height: 1.313rem;
+  margin: 0.438rem 0 0.25rem 3.688rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+}
+
+button {
+  width: 11.5rem;
+  height: 2.063rem;
+  margin: 0.75rem 1.75rem 0.563rem 3.688rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border: none;
+  background-color: var(--accent-color);
+  font-family: var(--font);
+  font-size: 0.813rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  cursor: pointer;
+}
+
 @keyframes createBox {
   from {
     transform: scale(0);
