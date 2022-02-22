@@ -128,8 +128,12 @@
 }
 
 @media (max-width: 768px) {
-  .bookTopic {
+  h2 {
     font-size: 18px;
+  }
+
+  .bookTopic {
+    font-size: 14px;
   }
 
   .barContainer {

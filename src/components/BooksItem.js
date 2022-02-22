@@ -8,6 +8,7 @@ const BooksItem = ({
   id, title, author, category, removeBookHandler,
 }) => {
   const [percentage, setPercentage] = useState(Math.floor(Math.random() * 99));
+
   const improvedProgress = () => {
     setPercentage((prevPercent) => {
       if (prevPercent < 100) {
@@ -20,13 +21,16 @@ const BooksItem = ({
       return prevPercent;
     });
   };
+
+  const capitalizeFirstChar = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
   return (
     <>
       <li className={styles.listItem}>
         <ul className={styles.itemsList}>
           <li className={styles.flexBig}>
             {' '}
-            <p className={styles.bookTopic}>{category}</p>
+            <p className={styles.bookTopic}>{capitalizeFirstChar(category)}</p>
             <h2>{title}</h2>
             <span className={styles.author}>{author}</span>
             <ul className={styles.innerList}>
