@@ -25,12 +25,13 @@ const BooksForm = () => {
   const formSubmitHandler = (event) => {
     event.preventDefault();
     dispatch(addBook(newBook));
+    event.target.reset();
   };
 
   return (
     <div className={css.wrapper}>
       <div className={css.title}>ADD NEW BOOK</div>
-      <form method="POST" className={css.formstyle}>
+      <form className={css.formstyle} onSubmit={formSubmitHandler}>
         <input
           type="text"
           name="title"
@@ -65,7 +66,7 @@ const BooksForm = () => {
           <option value="romance">Romance</option>
           <option value="horror">Horror</option>
         </select>
-        <button type="submit" className={css.formSubmitBtn} onClick={formSubmitHandler}>
+        <button type="submit" className={css.formSubmitBtn}>
           ADD BOOK
         </button>
       </form>
