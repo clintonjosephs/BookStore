@@ -16,19 +16,23 @@
   border: solid 1px var(--border-color);
   background-color: var(--white);
   letter-spacing: -0.15px;
+  font-size: 16px;
+  color: #696969;
 }
 
 .wrapper {
   margin: 2.313rem 6.25rem 0;
 }
 
-button {
+.formSubmitBtn {
   width: 11.5rem;
   height: 2.813rem;
   margin: 1.188rem 0 0 2.125rem;
   padding: 0.801rem 1.188rem 0.886rem 1.375rem;
-  border-radius: 3px;
   background-color: #0290ff;
+  box-shadow: none;
+  border: none;
+  color: var(--white);
 }
 
 .formstyle {
