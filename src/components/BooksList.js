@@ -21,8 +21,8 @@ const BooksList = () => {
           listStyle: 'none',
         }}
       >
-        {
-          data.length > 0 ? data.map(({
+        {data.length > 0 ? (
+          data.map(({
             id, title, author, category,
           }) => (
             <BooksItem
@@ -33,8 +33,12 @@ const BooksList = () => {
               id={id}
               removeBookHandler={removeBookFromStore}
             />
-          )) : <li className={css.title} style={{ margin: '2.313rem 6.25rem 0' }}><h2>No books in store yet</h2></li>
-        }
+          ))
+        ) : (
+          <li className={css.title} style={{ margin: '2.313rem 6.25rem 0' }}>
+            <h2>No books in store yet</h2>
+          </li>
+        )}
       </ul>
     </>
   );

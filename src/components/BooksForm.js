@@ -1,34 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 import css from './styles/BooksForm.module.css';
 
 const BooksForm = () => {
-  const dispatch = useDispatch();
-
-  let newBook = {
+  const setup = () => ({
     id: '',
     title: '',
     author: '',
     category: '',
-  };
+  });
+
+  const dispatch = useDispatch();
+  const [bookData, setBookData] = useState(setup());
+
+  const { title, author, category } = bookData;
 
   const changeHandler = (event) => {
-    newBook = {
-      ...newBook,
+    setBookData((prevState) => ({
+      ...prevState,
       id: uuidv4(),
       [event.target.name]: event.target.value,
-    };
+    }));
   };
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    if (newBook.title.trim() !== '' && newBook.author.trim() !== '') {
-      dispatch(addBook(newBook));
-      event.target.reset();
-    } else {
-      console.log('i got here');
+    if (title.trim() !== '' && author.trim() !== '') {
+      dispatch(addBook(bookData));
+      setBookData(setup());
     }
   };
 
@@ -41,6 +42,7 @@ const BooksForm = () => {
           name="title"
           placeholder="Book title"
           className={css.control}
+          value={title}
           required
           onChange={changeHandler}
         />
@@ -49,13 +51,14 @@ const BooksForm = () => {
           name="author"
           placeholder="Book Author"
           className={css.control}
+          value={author}
           required
           onChange={changeHandler}
         />
         <select
           name="category"
           className={css.control}
-          defaultValue=""
+          value={category}
           required
           onChange={changeHandler}
         >
