@@ -23,7 +23,9 @@ const BooksItem = ({
                 <button
                   type="button"
                   onClick={() => removeBookHandler(id)}
-                  style={{ background: 'none', border: 'none', color: 'var(--accent-color-actions)' }}
+                  style={{
+                    background: 'none', border: 'none', color: 'var(--accent-color-actions)', cursor: 'pointer',
+                  }}
                 >
                   Remove
                 </button>
