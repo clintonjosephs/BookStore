@@ -24,8 +24,12 @@ const BooksForm = () => {
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    dispatch(addBook(newBook));
-    event.target.reset();
+    if (newBook.title.trim() !== '' && newBook.author.trim() !== '') {
+      dispatch(addBook(newBook));
+      event.target.reset();
+    } else {
+      console.log('i got here');
+    }
   };
 
   return (
