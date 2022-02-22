@@ -16,6 +16,8 @@
   border: solid 1px var(--border-color);
   background-color: var(--white);
   letter-spacing: -0.15px;
+  font-size: 16px;
+  color: #696969;
 }
 
 .wrapper {
