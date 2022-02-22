@@ -1,9 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/books';
 import css from './styles/BooksForm.module.css';
 
-const BooksForm = ({ handleSubmitEvent }) => {
+const BooksForm = () => {
+  const dispatch = useDispatch();
+
   let newBook = {
     id: '',
     title: '',
@@ -21,7 +24,7 @@ const BooksForm = ({ handleSubmitEvent }) => {
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    handleSubmitEvent(newBook);
+    dispatch(addBook(newBook));
   };
 
   return (
@@ -55,23 +58,19 @@ const BooksForm = ({ handleSubmitEvent }) => {
             Category
           </option>
           <option value="comedy">Comedy</option>
-          <option value="action">Sci-fi</option>
+          <option value="action">Action</option>
           <option value="sci-fi">Sci-fi</option>
           <option value="drama">Drama</option>
           <option value="poetry">Poetry</option>
           <option value="romance">Romance</option>
           <option value="horror">Horror</option>
         </select>
-        <button type="submit" onClick={formSubmitHandler}>
+        <button type="submit" className={css.formSubmitBtn} onClick={formSubmitHandler}>
           ADD BOOK
         </button>
       </form>
     </div>
   );
-};
-
-BooksForm.propTypes = {
-  handleSubmitEvent: PropTypes.func.isRequired,
 };
 
 export default BooksForm;

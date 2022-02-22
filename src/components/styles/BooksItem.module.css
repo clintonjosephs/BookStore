@@ -75,7 +75,7 @@
   letter-spacing: -0.4px;
 }
 
-button {
+.btn {
   width: 11.5rem;
   height: 2.063rem;
   margin: 0.75rem 1.75rem 0.563rem 3.688rem;
@@ -128,6 +128,10 @@ button {
 }
 
 @media (max-width: 768px) {
+  .bookTopic {
+    font-size: 24px;
+  }
+
   .barContainer {
     width: 30px;
     height: 30px;
@@ -170,7 +174,7 @@ button {
     overflow-x: hidden;
   }
 
-  button {
+  .btn {
     width: 7rem;
     height: 3.063rem;
     border: none;
