@@ -33,9 +33,12 @@ const BooksForm = () => {
           <option value="" hidden>
             Category
           </option>
+          <option value="comedy">Comedy</option>
           <option value="sci-fi">Sci-fi</option>
           <option value="drama">Drama</option>
-          <option value="poetry">Category</option>
+          <option value="poetry">Poetry</option>
+          <option value="romance">Romance</option>
+          <option value="horror">Horror</option>
         </select>
         <button type="submit" onClick={formSubmitHandler}>
           ADD BOOK
