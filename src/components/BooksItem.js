@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -7,7 +7,19 @@ import styles from './styles/BooksItem.module.css';
 const BooksItem = ({
   id, title, author, category, removeBookHandler,
 }) => {
-  const percentage = Math.floor(Math.random() * 99);
+  const [percentage, setPercentage] = useState(Math.floor(Math.random() * 99));
+  const improvedProgress = () => {
+    setPercentage((prevPercent) => {
+      if (prevPercent < 100) {
+        if ((prevPercent + 10) <= 100) {
+          return prevPercent + 10;
+        }
+        const final = 100 - prevPercent;
+        return prevPercent + final;
+      }
+      return prevPercent;
+    });
+  };
   return (
     <>
       <li className={styles.listItem}>
@@ -63,7 +75,7 @@ const BooksItem = ({
               {' '}
               {percentage}
             </p>
-            <button type="button" className={styles.btn}>
+            <button type="button" className={styles.btn} onClick={improvedProgress}>
               UPDATE PROGRESS
             </button>
           </li>
