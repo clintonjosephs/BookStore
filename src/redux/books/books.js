@@ -24,7 +24,7 @@ export const loadBooks = (payload) => ({
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_BOOK:
-      return { books: [...state.books, payload] };
+      return { books: [payload, ...state.books] };
     case REMOVE_BOOK:
       return { books: state.books.filter((book) => book.id !== payload) };
     case LOAD_BOOKS:

@@ -8,7 +8,7 @@ import NavBar from './components/NavBar';
 import './index.css';
 import Categories from './pages/Categories';
 import NotFound from './pages/NotFound';
-import reportWebVitals from './reportWebVitals';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,8 +25,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

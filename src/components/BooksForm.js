@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import { Watch } from 'react-loader-spinner';
 import { addBookThunk } from '../redux/books/bookThunks';
 import css from './styles/BooksForm.module.css';
 
@@ -14,6 +15,7 @@ const BooksForm = () => {
 
   const dispatch = useDispatch();
   const [bookData, setBookData] = useState(setup());
+  const [showLoader, setLoaderShow] = useState(false);
 
   const { title, author, category } = bookData;
 
@@ -25,13 +27,36 @@ const BooksForm = () => {
     }));
   };
 
-  const formSubmitHandler = (event) => {
+  const formSubmitHandler = async (event) => {
     event.preventDefault();
     if (title.trim() !== '' && author.trim() !== '') {
-      dispatch(addBookThunk(bookData));
+      setLoaderShow((prevState) => !prevState);
+      await dispatch(addBookThunk(bookData));
       setBookData(setup());
+      setLoaderShow((prevState) => !prevState);
     }
   };
+
+  let formButton = '';
+  if (showLoader === false) {
+    formButton = <button type="submit" className={css.formSubmitBtn}>ADD BOOK </button>;
+  } else {
+    formButton = (
+      <div
+        style={{
+          padding: '0.801rem 1.188rem 0.886rem 1.375rem',
+          marginTop: '30px',
+        }}
+      >
+        <Watch
+          height="25"
+          width="25"
+          color="var(--accent-color)"
+          ariaLabel="loading"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={css.wrapper}>
@@ -73,9 +98,7 @@ const BooksForm = () => {
           <option value="romance">Romance</option>
           <option value="horror">Horror</option>
         </select>
-        <button type="submit" className={css.formSubmitBtn}>
-          ADD BOOK
-        </button>
+        { formButton }
       </form>
     </div>
   );
