@@ -15,7 +15,7 @@ export const addBookThunk = (bookItem) => async (dispatch) => {
 };
 
 export const loadBookThunk = () => async (dispatch) => {
-  dispatch(toogleSpinner());
+  dispatch(toogleSpinner(true));
   try {
     const response = await ApiCalls.fetchBooks();
 
@@ -33,7 +33,7 @@ export const loadBookThunk = () => async (dispatch) => {
   } catch (err) {
     throw new Error(err);
   } finally {
-    dispatch(toogleSpinner());
+    dispatch(toogleSpinner(false));
   }
 };
 

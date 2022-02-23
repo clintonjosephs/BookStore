@@ -8,7 +8,7 @@ import css from './styles/BooksForm.module.css';
 const BooksList = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.booksReducer.books);
-  const spinner = useSelector((state) => state.spinnerReducer);
+  const spinner = useSelector((state) => state.spinnerReducer.status);
 
   const removeBookFromStore = (bookID) => {
     dispatch(removeBookThunk(bookID));
