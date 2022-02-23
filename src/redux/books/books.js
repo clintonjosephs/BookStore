@@ -1,7 +1,10 @@
-const ADD_BOOK = 'bookStore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const ADD_BOOK = 'BOOKSTORE/BOOKS/ADD_BOOK';
+const REMOVE_BOOK = 'BOOKSTORE/BOOKS/REMOVE_BOOK';
+const LOAD_BOOKS = 'BOOKSTORE/BOOKS/LOAD_BOOKS';
 // initialize state
-const initialState = [];
+const initialState = {
+  books: [],
+};
 
 // actions
 export const addBook = (payload) => ({
@@ -15,12 +18,14 @@ export const removeBook = (payload) => ({
 });
 
 // write reducers / manager of store
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
+const reducer = (state = initialState, {type, payload}) => {
+  switch (type) {
     case ADD_BOOK:
-      return [...state, action.payload];
+      return { books: [...state, payload] };
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return { books: state.filter((book) => book.id !== payload) };
+    case LOAD_BOOKS:
+      return { books: [...payload] };
     default:
       return state;
   }
