@@ -18,7 +18,6 @@ export default class ApiWrapper {
   };
 
   deleteApi = async (apiEndpoint, data) => {
-    console.log(data, 'i got here');
     const response = await fetch(this.baseUrl + apiEndpoint, {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' },

@@ -1,6 +1,7 @@
 import ApiCalls from '../../helpers/ApiCalls';
 import { addBook, loadBooks, removeBook } from './books';
 
+// asynchronous actions
 export const addBookThunk = (bookItem) => async (dispatch) => {
   try {
     const response = await ApiCalls.addBooks(bookItem);
@@ -35,7 +36,6 @@ export const loadBookThunk = () => async (dispatch) => {
 export const removeBookThunk = (id) => async (dispatch) => {
   try {
     const response = await ApiCalls.removeBooks(id);
-    console.log(response, 'my response');
     if (response) {
       dispatch(removeBook(id));
     }
