@@ -1,33 +1,29 @@
 export default class ApiWrapper {
-    constructor(baseUrl) {
-        this.baseUrl = baseUrl;
-    }
+  constructor(baseUrl) {
+    this.baseUrl = baseUrl;
+  }
 
-    getApi = async (apiEndpoint) => {
-        const response = fetch(this.baseUrl + apiEndpoint, {
-            method: 'GET',
-            headers: { 'content-type': 'application/json' },
-        });
-        return response.json();
-    }
+  getApi = async (apiEndpoint) => {
+    const response = await fetch(this.baseUrl + apiEndpoint).then((data) => data.json());
+    return response;
+  };
 
-    postApi = async (apiEndpoint, data) => {
-        const response = fetch(this.baseUrl + apiEndpoint, {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-        return response;
-    }
+  postApi = async (apiEndpoint, data) => {
+    const response = await fetch(this.baseUrl + apiEndpoint, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    return response;
+  };
 
-    deleteApi = async (apiEndpoint, data) => {
-        const response = fetch(this.baseUrl + apiEndpoint, {
-            method: 'DELETE',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(data)
-        });
+  deleteApi = async (apiEndpoint, data) => {
+    const response = await fetch(this.baseUrl + apiEndpoint, {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(data),
+    }).then((data) => data);
 
-        return response;
-    }
-
+    return response;
+  };
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBookThunk } from '../redux/books/bookThunks';
 import css from './styles/BooksForm.module.css';
 
 const BooksForm = () => {
@@ -28,7 +28,7 @@ const BooksForm = () => {
   const formSubmitHandler = (event) => {
     event.preventDefault();
     if (title.trim() !== '' && author.trim() !== '') {
-      dispatch(addBook(bookData));
+      dispatch(addBookThunk(bookData));
       setBookData(setup());
     }
   };

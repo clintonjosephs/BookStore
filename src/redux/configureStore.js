@@ -1,5 +1,5 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import thunk from 'redux-thunk;'
+import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import booksReducer from './books/books';
 
