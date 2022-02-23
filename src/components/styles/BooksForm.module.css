@@ -21,7 +21,8 @@
 }
 
 .wrapper {
-  margin: 2.313rem 6.25rem 0;
+  margin: 5.313rem 6.25rem 10rem;
+  padding-bottom: 20px;
 }
 
 .formSubmitBtn {
@@ -33,6 +34,8 @@
   box-shadow: none;
   border: none;
   color: var(--white);
+  cursor: pointer;
+  margin-top: 30px;
 }
 
 .formstyle {
