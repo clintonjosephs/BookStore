@@ -14,16 +14,16 @@ export default class ApiWrapper {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(data),
     });
-    return response;
+    return response.ok;
   };
 
   deleteApi = async (apiEndpoint, data) => {
+    console.log(data, 'i got here');
     const response = await fetch(this.baseUrl + apiEndpoint, {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(data),
-    }).then((data) => data);
-
-    return response;
+    });
+    return response.ok;
   };
 }

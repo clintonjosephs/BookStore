@@ -4,7 +4,7 @@ const LOAD_BOOKS = 'BOOKSTORE/BOOKS/LOAD_BOOKS';
 // initialize state
 const initialState = { books: [] };
 
-// actions
+// synchronous actions!!!!!!!
 export const addBook = (payload) => ({
   type: ADD_BOOK,
   payload,

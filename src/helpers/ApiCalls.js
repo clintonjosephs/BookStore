@@ -31,7 +31,7 @@ export default class ApiCalls {
     const data = {
       item_id: id,
     };
-    const response = this.apiWrapper.postApi(
+    const response = this.apiWrapper.deleteApi(
       `apps/${this.appId}/books/${id}`,
       data,
     );

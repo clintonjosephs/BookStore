@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
-import { loadBookThunk } from '../redux/books/bookThunks';
+import { loadBookThunk, removeBookThunk } from '../redux/books/bookThunks';
 import BooksItem from './BooksItem';
 import css from './styles/BooksForm.module.css';
 
@@ -9,16 +8,16 @@ const BooksList = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.booksReducer.books);
   const removeBookFromStore = (bookID) => {
-    dispatch(removeBook(bookID));
+    dispatch(removeBookThunk(bookID));
   };
 
   useEffect(() => dispatch(loadBookThunk()), []);
 
   if (data.length === 0) {
     return (
-      <li className={css.title} style={{ margin: '2.313rem 6.25rem 0' }}>
+      <div className={css.title} style={{ margin: '2.313rem 6.25rem 0' }}>
         <h2>No books in store yet</h2>
-      </li>
+      </div>
     );
   }
 

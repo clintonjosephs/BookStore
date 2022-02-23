@@ -1,15 +1,14 @@
 import ApiCalls from '../../helpers/ApiCalls';
-import { addBook, loadBooks } from './books';
+import { addBook, loadBooks, removeBook } from './books';
 
-// , removeBook,
-
-export const addBookThunk = (bookItem) => (dispatch) => {
+export const addBookThunk = (bookItem) => async (dispatch) => {
   try {
-    ApiCalls.addBooks(bookItem);
+    const response = await ApiCalls.addBooks(bookItem);
+    if (response) {
+      dispatch(addBook(bookItem));
+    }
   } catch (err) {
     throw new Error(err);
-  } finally {
-    dispatch(addBook(bookItem));
   }
 };
 
@@ -33,8 +32,14 @@ export const loadBookThunk = () => async (dispatch) => {
   }
 };
 
-export const removeBookThunk = () => () => {
-  // call api to store book item
-  console.log('i am grateful lord');
-  // call dispatch for syncronous actions and pass in payload
+export const removeBookThunk = (id) => async (dispatch) => {
+  try {
+    const response = await ApiCalls.removeBooks(id);
+    console.log(response, 'my response');
+    if (response) {
+      dispatch(removeBook(id));
+    }
+  } catch (err) {
+    throw new Error(err);
+  }
 };
