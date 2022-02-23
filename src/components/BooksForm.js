@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { Watch } from 'react-loader-spinner';
 import { addBookThunk } from '../redux/books/bookThunks';
 import css from './styles/BooksForm.module.css';
+import Spinner from './Spinner';
 
 const BooksForm = () => {
   const setup = () => ({
@@ -48,12 +48,7 @@ const BooksForm = () => {
           marginTop: '30px',
         }}
       >
-        <Watch
-          height="25"
-          width="25"
-          color="var(--accent-color)"
-          ariaLabel="loading"
-        />
+        <Spinner width="15px" height="15px" />
       </div>
     );
   }
