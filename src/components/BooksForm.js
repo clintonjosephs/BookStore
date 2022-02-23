@@ -48,7 +48,7 @@ const BooksForm = () => {
           marginTop: '30px',
         }}
       >
-        <Spinner width="15px" height="15px" />
+        <Spinner width="25px" height="25px" />
       </div>
     );
   }

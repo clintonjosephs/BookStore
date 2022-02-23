@@ -2,7 +2,7 @@
 
 # BookStore - CMS
 
-![screenshot](./src/images/screenshots/skeleton.png)
+![screenshot](./src/images/screenshots/api-call.png)
 
 [Demo Link](COMING SOON)
 
