@@ -33,9 +33,9 @@ const BooksItem = ({
         <ul className={styles.itemsList}>
           <li className={styles.flexBig}>
             {' '}
-            <p className={`${styles.bookTopic} ${state === 'light' ? styles.fontLight : styles.fontDark}`}>{capitalizeFirstChar(category)}</p>
-            <h2 className={`${state === 'light' ? styles.fontLight : styles.fontDark}`}>{title}</h2>
-            <span className={`${styles.author} ${state === 'light' ? styles.fontLight : styles.fontDark}`}>{author}</span>
+            <p className={`${styles.bookTopic} ${toogleTheme}`}>{capitalizeFirstChar(category)}</p>
+            <h2 className={`${toogleTheme}`}>{title}</h2>
+            <span className={`${styles.author} ${toogleTheme}`}>{author}</span>
             <ul className={styles.innerList}>
               <li>Comment</li>
               <li>

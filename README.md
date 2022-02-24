@@ -4,7 +4,7 @@
 
 ![screenshot](./src/images/screenshots/bookstore.gif)
 
-[DEMO - netlify](clinton-bookstoremvp.netlify.app)
+[DEMO - netlify](https://clinton-bookstoremvp.netlify.app)
 
 [DEMO - gh-pages](https://clintonjosephs.github.io/BookStore/)
 
