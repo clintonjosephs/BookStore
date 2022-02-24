@@ -33,6 +33,14 @@
   padding-top: 15px;
 }
 
+.backDark {
+  background: var(--white);
+}
+
+.backLight {
+  background: var(--dark-bgc);
+}
+
 .bookNav ul li {
   margin-right: 50px;
 }
@@ -50,7 +58,6 @@
   .bookNav {
     padding: 5px;
     height: 5rem;
-    background-color: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;

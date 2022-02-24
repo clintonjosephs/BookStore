@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import styles from './styles/BooksItem.module.css';
@@ -7,6 +8,8 @@ import styles from './styles/BooksItem.module.css';
 const BooksItem = ({
   id, title, author, category, removeBookHandler,
 }) => {
+  const state = useSelector((state) => state.themeReducer.theme);
+
   const [percentage, setPercentage] = useState(Math.floor(Math.random() * 99));
 
   const improvedProgress = () => {
@@ -23,16 +26,16 @@ const BooksItem = ({
   };
 
   const capitalizeFirstChar = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-
+  const toogleTheme = state === 'light' ? styles.fontLight : styles.fontDark;
   return (
     <>
-      <li className={styles.listItem}>
+      <li className={`${styles.listItem} ${state === 'light' ? styles.listItemLight : styles.listItemDark}`}>
         <ul className={styles.itemsList}>
           <li className={styles.flexBig}>
             {' '}
-            <p className={styles.bookTopic}>{capitalizeFirstChar(category)}</p>
-            <h2>{title}</h2>
-            <span className={styles.author}>{author}</span>
+            <p className={`${styles.bookTopic} ${toogleTheme}`}>{capitalizeFirstChar(category)}</p>
+            <h2 className={`${toogleTheme}`}>{title}</h2>
+            <span className={`${styles.author} ${toogleTheme}`}>{author}</span>
             <ul className={styles.innerList}>
               <li>Comment</li>
               <li>
@@ -64,16 +67,16 @@ const BooksItem = ({
               />
             </div>
             <div>
-              <p className={styles.percentComplete}>
+              <p className={`${styles.percentComplete} ${toogleTheme}`}>
                 {' '}
                 {`${percentage}%`}
               </p>
-              <p className={styles.completed}>Completed</p>
+              <p className={`${styles.completed} ${toogleTheme}`}>Completed</p>
             </div>
           </li>
           <li className={styles.lastList}>
-            <p className={styles.chapter}>CURRENT CHAPTER</p>
-            <p className={styles.lesson}>
+            <p className={`${styles.chapter} ${toogleTheme}`}>CURRENT CHAPTER</p>
+            <p className={`${styles.lesson} ${toogleTheme}`}>
               Chapter
               {' '}
               {' '}

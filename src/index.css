@@ -17,6 +17,9 @@
   --form-header: #888;
   --white: #fff;
   --dim-grey: #696969;
+  --dark-font: #000;
+  --dark-bgc: #19313c;
+  --dark-body: #162d34;
 }
 
 body {
