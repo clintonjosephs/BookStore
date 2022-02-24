@@ -43,6 +43,7 @@ const NavBar = () => {
                 style={({ isActive }) => ({
                   textDecoration: 'none',
                   opacity: isActive ? '1' : '0.5',
+                  color: state === 'light' ? 'var(--black)' : 'var(--white)',
                 })}
               >
                 {text}
