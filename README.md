@@ -2,7 +2,7 @@
 
 # BookStore - CMS
 
-![screenshot](./src/images/screenshots/api-call.png)
+![screenshot](./src/images/screenshots/bookstore.gif)
 
 [GH-PAGES](https://clintonjosephs.github.io/BookStore/)
 
