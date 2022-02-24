@@ -1,0 +1,7 @@
+.bgDark {
+  background: var(--dark-body);
+}
+
+.bgLight {
+  background: var(--background-light);
+}
