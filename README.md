@@ -6,8 +6,6 @@
 
 [DEMO - netlify](https://clinton-bookstoremvp.netlify.app)
 
-[DEMO - gh-pages](https://clintonjosephs.github.io/BookStore/)
-
 > Welcome to BookStore, an MVP version of a BookStore app that allows you to display a list of books, add a book, remove a selected book from the list, and update your progress as you read the book. Built with React, HTML, CSS, and JavaScript.
 
 
