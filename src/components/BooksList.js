@@ -5,6 +5,8 @@ import BooksItem from './BooksItem';
 import Spinner from './Spinner';
 import css from './styles/BooksForm.module.css';
 
+let fetched = false;
+
 const BooksList = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.booksReducer.books);
@@ -14,7 +16,12 @@ const BooksList = () => {
     dispatch(removeBookThunk(bookID));
   };
 
-  useEffect(() => dispatch(loadBookThunk()), []);
+  useEffect(() => {
+    if (!fetched) {
+      dispatch(loadBookThunk());
+      fetched = true;
+    }
+  }, []);
 
   if (spinner) {
     return (
